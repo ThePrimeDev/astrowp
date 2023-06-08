@@ -4,6 +4,9 @@ on:
   repository_dispatch:
     types: 
       - changecont
+  push:
+    branches:
+      - 'main'
 
 permissions:
   contents: read

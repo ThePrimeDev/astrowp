@@ -3,7 +3,7 @@ name: Deploy to FTP
 on:
   repository_dispatch:
     types: 
-      - change
+      - changecont
 
 permissions:
   contents: read

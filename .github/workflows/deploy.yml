@@ -2,7 +2,8 @@ name: Deploy to FTP
 
 on:
   repository_dispatch:
-    types: [wordpress_content_change]
+    types: 
+      - change
 
 permissions:
   contents: read

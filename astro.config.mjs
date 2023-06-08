@@ -6,5 +6,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [image(), tailwind()],
-  base: "/asd/peta-astro/",
+  base: "/jaj/", 
 });

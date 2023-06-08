@@ -32,9 +32,6 @@ jobs:
         GRAPHQL_API_PATH: "graphql"
         file_name: .env
         fail_on_empty: false
-        
-    - name: Log ENVFILE
-      run: echo ./.env
       
     - name: 🔨 Build Project
       run: |

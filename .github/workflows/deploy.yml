@@ -11,26 +11,28 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      
-      - name: Use Node.js 16
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
 
+    - name: Use Node.js 18
       uses: actions/setup-node@v2
-
       with:
-
-        node-version: '16'
-
+        node-version: '18'
       
-
     - name: 🔨 Build Project
-
       run: |
-
         npm install
-
         npm run build
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftpupload.net
+        username: if0_34381916
+        password: ${{ secrets.prod_ftp_password }}
+        server-dir: htdocs/jaj/
+        local-dir: ./dist

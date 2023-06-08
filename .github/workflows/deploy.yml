@@ -33,6 +33,9 @@ jobs:
         file_name: .env
         fail_on_empty: false
         
+    - name: Log ENVFILE
+      run: echo ./.env
+      
     - name: 🔨 Build Project
       run: |
         npm install
@@ -45,4 +48,4 @@ jobs:
         username: if0_34381916
         password: ${{ secrets.prod_ftp_password }}
         server-dir: htdocs/jaj/
-        local-dir: ./dist
+        local-dir: ./dist/
